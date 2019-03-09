@@ -6,12 +6,13 @@ def consolidate_cart(cart)
   cart.each do |item|
     item.each do |food, info|
       if consolidated.keys.include?(food)
+        
+      else
+        consolidated[food] = info
+        consolidated[food][:count] = 1
+        binding.pry
       
-    else
-      consolidated[food] = info
-      binding.pry
-      
-    end
+      end
     end
   end
 end
