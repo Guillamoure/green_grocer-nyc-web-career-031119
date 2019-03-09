@@ -36,7 +36,7 @@ def apply_coupons(cart, coupons)
         else
           new_cart[with_coupon][:count] = 1
         end
-        binding.pry
+        
       end
     end
   end
