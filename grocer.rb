@@ -25,6 +25,7 @@ def apply_coupons(cart, coupons)
     if cart.keys.include?sale[:item]
       while cart[sale[:item]][:count] >= sale[:num] && cart[sale[:item]][:clearance] == true
         cart[sale[:item]][:count] = cart[sale[:item]][:count] - sale[:num]
+        x = cart[sale[:item]][:count] - sale[:num]
         with_coupon = sale[:item] + " W/COUPON"
         cart[with_coupon] = {}
         cart[with_coupon][:price] = sale[:cost]
