@@ -48,7 +48,8 @@ def apply_clearance(cart)
   # code here
   cart.collect do |food, info|
     if info[:clearance] == TRUE
-      info[:price] = info[:price] * 0.80
+      x = info[:price] * 0.80
+      info[:price] = x.round(1)
       
     end
   end
