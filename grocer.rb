@@ -7,6 +7,8 @@ def consolidate_cart(cart)
     if consolidated.keys.include?(food)
     else
       while n < cart.length
+        
+      end
     end
   end
 end
