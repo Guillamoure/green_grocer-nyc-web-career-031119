@@ -46,7 +46,7 @@ end
 
 def apply_clearance(cart)
   # code here
-  cart.each do |food, info|
+  cart.collect do |food, info|
     if info[:clearance] == TRUE
       info[:price] == info[:price] * 0.80
       binding.pry
