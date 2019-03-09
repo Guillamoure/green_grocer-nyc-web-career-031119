@@ -64,7 +64,8 @@ def checkout(cart, coupons)
   final_cart = apply_clearance(cheaper_cart)
   binding.pry
   final_cart.each do |food, info|
-    total+=info[:price]
+    combined = info[:price] * info[:count]
+    total+=combined
   end
   return total
 end
