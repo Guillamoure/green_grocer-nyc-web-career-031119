@@ -28,7 +28,7 @@ def apply_coupons(cart, coupons)
         new_cart[sale[:item]][:count] = new_cart[sale[:item]][:count] - sale[:num]
         
         with_coupon = sale[:item] + " W/COUPON"
-        if new_cart[with_coupon][:count] == NIL
+        if new_cart[with_coupon] == NIL
           new_cart[with_coupon] = {}
           new_cart[with_coupon][:price] = sale[:cost]
           new_cart[with_coupon][:clearance] = new_cart[sale[:item]][:clearance]
