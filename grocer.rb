@@ -1,6 +1,12 @@
 require 'pry'
 def consolidate_cart(cart)
   # code here
+  consolidated ={}
+  cart.each do |food, info|
+    if consolidated.keys.include?(food)
+      
+    end
+  end
 end
 
 def apply_coupons(cart, coupons)
