@@ -20,27 +20,27 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  
+  new_cart = cart
   coupons.each do |sale|
-    if cart.keys.include?sale[:item]
-      while cart[sale[:item]][:count] >= sale[:num] && cart[sale[:item]][:clearance] == true
-        x = cart[sale[:item]][:count] - sale[:num]
-        cart[sale[:item]][:count] = cart[sale[:item]][:count] - sale[:num]
+    if new_cart.keys.include?sale[:item]
+      while new_cart[sale[:item]][:count] >= sale[:num] && new_cart[sale[:item]][:clearance] == true
+        x = new_cart[sale[:item]][:count] - sale[:num]
+        new_cart[sale[:item]][:count] = new_cart[sale[:item]][:count] - sale[:num]
         
         with_coupon = sale[:item] + " W/COUPON"
-        cart[with_coupon] = {}
-        cart[with_coupon][:price] = sale[:cost]
-        cart[with_coupon][:clearance] = true
-        if cart[with_coupon][:count]
-          cart[with_coupon][:count]+=1
+        new_cart[with_coupon] = {}
+        new_cart[with_coupon][:price] = sale[:cost]
+        new_cart[with_coupon][:clearance] = true
+        if new_cart[with_coupon][:count]
+          new_cart[with_coupon][:count]+=1
         else
-          cart[with_coupon][:count] = 1
+          new_cart[with_coupon][:count] = 1
         end
         binding.pry
       end
     end
   end
-  return cart
+  return new_cart
 end
 
 def apply_clearance(cart)
