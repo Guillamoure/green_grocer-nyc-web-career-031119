@@ -10,11 +10,12 @@ def consolidate_cart(cart)
       else
         consolidated[food] = info
         consolidated[food][:count] = 1
-        binding.pry
+        
       
       end
     end
   end
+  return consolidated
 end
 
 def apply_coupons(cart, coupons)
