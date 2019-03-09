@@ -23,7 +23,8 @@ def apply_coupons(cart, coupons)
   
   coupons.each do |sale|
     if cart.keys.include?sale[:item]
-      if cart[sale[:item]]
+      if cart[sale[:item]][:count] >= sale[:num] && cart[sale[:item]][:clearance] == true
+        binding.pry
     end
   end
 end
