@@ -4,7 +4,7 @@ def consolidate_cart(cart)
   consolidated = {}
   n = 0
   cart.each do |item|
-    items.each do |food, info|
+    item.each do |food, info|
       if consolidated.keys.include?(food)
       
     else
