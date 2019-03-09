@@ -3,13 +3,15 @@ def consolidate_cart(cart)
   # code here
   consolidated = {}
   n = 0
-  cart.each do |food, info|
-    if consolidated.keys.include?(food)
+  cart.each do |item|
+    items.each do |food, info|
+      if consolidated.keys.include?(food)
       
     else
       consolidated[food] = info
       binding.pry
       
+    end
     end
   end
 end
