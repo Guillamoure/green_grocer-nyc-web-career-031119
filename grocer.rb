@@ -30,6 +30,7 @@ def apply_coupons(cart, coupons)
         cart[with_coupon][:price] = sale[:cost]
         cart[with_coupon][:clearance] = "true"
         cart[with_coupon][:count] = 1
+        binding.pry
       end
     end
   end
