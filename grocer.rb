@@ -31,7 +31,7 @@ def apply_coupons(cart, coupons)
         new_cart[with_coupon] = {}
         new_cart[with_coupon][:price] = sale[:cost]
         new_cart[with_coupon][:clearance] = new_cart[sale[:item]][:clearance]
-        if new_cart[with_coupon][:count] > 0
+        if new_cart[with_coupon][:count] > 1
           new_cart[with_coupon][:count]+=1
         else
           new_cart[with_coupon][:count] = 1
