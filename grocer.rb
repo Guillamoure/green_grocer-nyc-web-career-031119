@@ -21,6 +21,9 @@ end
 def apply_coupons(cart, coupons)
   # code here
   binding.pry
+  cart.each do |food, info|
+    if info[:clearance] == "true" && info[:count] >= coupons
+  end
 end
 
 def apply_clearance(cart)
