@@ -8,6 +8,7 @@ def consolidate_cart(cart)
       
     else
       consolidated[food] = info
+      binidng.pry
       consolidated[food][:count] = 1
       binding.pry
     end
