@@ -5,10 +5,11 @@ def consolidate_cart(cart)
   n = 0
   cart.each do |food, info|
     if consolidated.keys.include?(food)
+      
     else
-      while n < cart.length
-        
-      end
+      consolidated[food] = info
+      consolidated[food][:count] = 1
+      binding.pry
     end
   end
 end
