@@ -4,6 +4,7 @@ def consolidate_cart(cart)
   consolidated ={}
   cart.each do |food, info|
     if consolidated.keys.include?(food)
+    else
       
     end
   end
