@@ -8,7 +8,7 @@ def consolidate_cart(cart)
       
     else
       consolidated[food] = info
-      binidng.pry
+      binding.pry
       
     end
   end
