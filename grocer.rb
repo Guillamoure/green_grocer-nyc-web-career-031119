@@ -23,14 +23,14 @@ def apply_coupons(cart, coupons)
   new_cart = cart
   coupons.each do |sale|
     if new_cart.keys.include?sale[:item]
-      while new_cart[sale[:item]][:count] >= sale[:num] && new_cart[sale[:item]][:clearance] == true
+      while new_cart[sale[:item]][:count] >= sale[:num] 
         x = new_cart[sale[:item]][:count] - sale[:num]
         new_cart[sale[:item]][:count] = new_cart[sale[:item]][:count] - sale[:num]
         
         with_coupon = sale[:item] + " W/COUPON"
         new_cart[with_coupon] = {}
         new_cart[with_coupon][:price] = sale[:cost]
-        new_cart[with_coupon][:clearance] = true
+        new_cart[with_coupon][:clearance] = new_cart[sale[:item]]
         if new_cart[with_coupon][:count]
           new_cart[with_coupon][:count]+=1
         else
