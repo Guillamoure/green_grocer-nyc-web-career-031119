@@ -20,7 +20,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  binding.pry
+  
   coupons.each do |sale|
     if cart.keys.include?sale[:item]
       binding.pry
