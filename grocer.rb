@@ -28,11 +28,13 @@ def apply_coupons(cart, coupons)
         new_cart[sale[:item]][:count] = new_cart[sale[:item]][:count] - sale[:num]
         
         with_coupon = sale[:item] + " W/COUPON"
-        new_cart[with_coupon] = {}
-        new_cart[with_coupon][:price] = sale[:cost]
-        new_cart[with_coupon][:clearance] = new_cart[sale[:item]][:clearance]
+        if new_cart[with_coupon][:count] == NIL
+          new_cart[with_coupon] = {}
+          new_cart[with_coupon][:price] = sale[:cost]
+          new_cart[with_coupon][:clearance] = new_cart[sale[:item]][:clearance]
+          new_cart[with_coupon][:count] = 1
         binding.pry
-        if new_cart[with_coupon][:count]
+        else new_cart[with_coupon][:count]
           new_cart[with_coupon][:count]+=1
         else
           new_cart[with_coupon][:count] = 1
