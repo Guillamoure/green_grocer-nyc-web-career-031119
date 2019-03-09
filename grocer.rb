@@ -1,11 +1,12 @@
 require 'pry'
 def consolidate_cart(cart)
   # code here
-  consolidated ={}
+  consolidated = {}
+  n = 0
   cart.each do |food, info|
     if consolidated.keys.include?(food)
     else
-      
+      while n < cart.length
     end
   end
 end
