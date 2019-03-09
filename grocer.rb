@@ -62,7 +62,7 @@ def checkout(cart, coupons)
   thin_cart = consolidate_cart(cart)
   cheaper_cart = apply_coupons(thin_cart, coupons)
   final_cart = apply_clearance(cheaper_cart)
-  
+  binding.pry
   final_cart.each do |food, info|
     total+=info[:price]
   end
