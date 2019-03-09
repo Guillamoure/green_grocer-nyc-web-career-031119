@@ -2,7 +2,7 @@ require 'pry'
 def consolidate_cart(cart)
   # code here
   consolidated = {}
-  n = 0
+  
   cart.each do |item|
     item.each do |food, info|
       if consolidated.keys.include?(food)
@@ -20,7 +20,7 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  
+  binding.pry
 end
 
 def apply_clearance(cart)
